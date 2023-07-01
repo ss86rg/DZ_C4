@@ -5,7 +5,13 @@
 //(*) В 3-й задаче Доп сложность. Ввод с консоли “введите количество элементов массива”, 
 //“Введите минимальный порог случайных значений”, “Введите максимальный порог случайных значений”
 
-
+int Prompt(string massage)
+{
+    Console.Write(massage);
+    string ReadInput = Console.ReadLine();
+    int result = int.Parse(ReadInput);
+    return result;
+}
 
 int[] GenerateArray(int len, int min, int max)
 {
@@ -26,5 +32,9 @@ void PrintArrey(int[] Arrey)
     }
 }
 
-int[] number = GenerateArray(8,0,99);
-PrintArrey(number);
+int len = Prompt("Введите массив = ");
+int min = Prompt("Введите минимальное значение = ");
+int max = Prompt("Введите максимальное значение = ");
+int[] Arrey = GenerateArray(len,min,max);
+
+PrintArrey(Arrey);
